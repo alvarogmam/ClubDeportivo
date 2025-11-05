@@ -19,7 +19,7 @@ namespace ClubDeportivo.Datos
         // Constructor privado: evita que se creen múltiples instancias
         private Conexion()
         {
-            this.baseDatos = "ComBEquipo2ClubDeportivo"; //Nombre de la base de datos
+            this.baseDatos = "club_deportivo"; //Nombre de la base de datos
             this.servidor = "localhost";
             this.puerto = "3306";
             this.usuario = "root"; // En caso de que tu base de datos tenga un 

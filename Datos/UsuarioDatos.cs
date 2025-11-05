@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 using MySql.Data.MySqlClient;
 using ClubDeportivo.Datos;
 
@@ -13,7 +14,7 @@ namespace ClubDeportivo.Datos
         //Metodo que valida si el usuario y contraseña existen en la base de datos. true si las credenciales son correctas, false si no.
         public bool ValidarUsuario(string usuario, string clave, out string nombreCompleto, out string rol)
         {
-            nombreCompleto = string.Empty;
+            nombreCompleto = usuario; //Muestra el nombre de usuario
             rol = string.Empty;
 
             try
@@ -22,22 +23,20 @@ namespace ClubDeportivo.Datos
                 {
                     cn.Open();
 
-                    string sql = @"SELECT p.nombre, p.apellido, u.rol
-                                   FROM usuario u
-                                   INNER JOIN persona p ON u.idPersona = p.idPersona
-                                   WHERE u.username = @usuario
-                                   AND u.password_hash = SHA2(@clave,256)";
+                    //Llamamnos al procedimiento almacenado en la base de datos
+                 
 
-                    using (MySqlCommand cmd = new MySqlCommand(sql, cn))
+                    using (MySqlCommand cmd = new MySqlCommand("sp_validar_login", cn))
                     {
-                        cmd.Parameters.AddWithValue("@usuario", usuario);
-                        cmd.Parameters.AddWithValue("@clave", clave);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@p_user", usuario);
+                        cmd.Parameters.AddWithValue("@p_pass", clave);
 
                         using (MySqlDataReader dr = cmd.ExecuteReader())
                         {
                             if (dr.Read())
                             {
-                                nombreCompleto = dr["nombre"].ToString() + " " + dr["apellido"].ToString();
+                               
                                 rol = dr["rol"].ToString();
                                 return true;
                             }

@@ -70,7 +70,7 @@
             lblRol.AutoSize = true;
             lblRol.Font = new Font("Segoe MDL2 Assets", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblRol.ForeColor = SystemColors.WindowFrame;
-            lblRol.Location = new Point(230, 70);
+            lblRol.Location = new Point(20, 110);
             lblRol.Name = "lblRol";
             lblRol.Size = new Size(42, 24);
             lblRol.TabIndex = 2;
@@ -80,8 +80,8 @@
             // 
             btnRegistrarSocio.BackColor = Color.Khaki;
             btnRegistrarSocio.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnRegistrarSocio.ForeColor = SystemColors.WindowFrame;
-            btnRegistrarSocio.Location = new Point(109, 156);
+            btnRegistrarSocio.ForeColor = SystemColors.MenuText;
+            btnRegistrarSocio.Location = new Point(109, 190);
             btnRegistrarSocio.Name = "btnRegistrarSocio";
             btnRegistrarSocio.Size = new Size(265, 90);
             btnRegistrarSocio.TabIndex = 3;
@@ -93,8 +93,8 @@
             // 
             btnRegistrarNoSocio.BackColor = Color.Khaki;
             btnRegistrarNoSocio.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnRegistrarNoSocio.ForeColor = SystemColors.WindowFrame;
-            btnRegistrarNoSocio.Location = new Point(394, 156);
+            btnRegistrarNoSocio.ForeColor = SystemColors.WindowText;
+            btnRegistrarNoSocio.Location = new Point(394, 190);
             btnRegistrarNoSocio.Name = "btnRegistrarNoSocio";
             btnRegistrarNoSocio.Size = new Size(265, 90);
             btnRegistrarNoSocio.TabIndex = 4;
@@ -105,8 +105,8 @@
             // 
             btnCobrarCuota.BackColor = Color.Khaki;
             btnCobrarCuota.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCobrarCuota.ForeColor = SystemColors.WindowFrame;
-            btnCobrarCuota.Location = new Point(109, 276);
+            btnCobrarCuota.ForeColor = SystemColors.WindowText;
+            btnCobrarCuota.Location = new Point(109, 310);
             btnCobrarCuota.Name = "btnCobrarCuota";
             btnCobrarCuota.Size = new Size(265, 90);
             btnCobrarCuota.TabIndex = 5;
@@ -117,8 +117,8 @@
             // 
             btnCobrarActividad.BackColor = Color.Khaki;
             btnCobrarActividad.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCobrarActividad.ForeColor = SystemColors.WindowFrame;
-            btnCobrarActividad.Location = new Point(394, 276);
+            btnCobrarActividad.ForeColor = SystemColors.WindowText;
+            btnCobrarActividad.Location = new Point(394, 310);
             btnCobrarActividad.Name = "btnCobrarActividad";
             btnCobrarActividad.Size = new Size(265, 90);
             btnCobrarActividad.TabIndex = 6;
@@ -129,8 +129,8 @@
             // 
             btnEmitirCarnet.BackColor = Color.Khaki;
             btnEmitirCarnet.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEmitirCarnet.ForeColor = SystemColors.WindowFrame;
-            btnEmitirCarnet.Location = new Point(109, 396);
+            btnEmitirCarnet.ForeColor = SystemColors.WindowText;
+            btnEmitirCarnet.Location = new Point(109, 430);
             btnEmitirCarnet.Name = "btnEmitirCarnet";
             btnEmitirCarnet.Size = new Size(265, 90);
             btnEmitirCarnet.TabIndex = 7;
@@ -141,8 +141,8 @@
             // 
             btnListaVencimientos.BackColor = Color.Khaki;
             btnListaVencimientos.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnListaVencimientos.ForeColor = SystemColors.WindowFrame;
-            btnListaVencimientos.Location = new Point(394, 396);
+            btnListaVencimientos.ForeColor = SystemColors.WindowText;
+            btnListaVencimientos.Location = new Point(394, 430);
             btnListaVencimientos.Name = "btnListaVencimientos";
             btnListaVencimientos.Size = new Size(265, 90);
             btnListaVencimientos.TabIndex = 8;
@@ -151,22 +151,23 @@
             // 
             // btnSalir
             // 
-            btnSalir.BackColor = Color.Wheat;
+            btnSalir.BackColor = Color.Orange;
             btnSalir.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSalir.ForeColor = SystemColors.WindowFrame;
-            btnSalir.Location = new Point(676, 70);
+            btnSalir.ForeColor = SystemColors.WindowText;
+            btnSalir.Location = new Point(686, 12);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(80, 40);
             btnSalir.TabIndex = 9;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = false;
+            btnSalir.Click += btnSalir_Click;
             // 
             // FrmMenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightYellow;
-            ClientSize = new Size(778, 544);
+            ClientSize = new Size(778, 594);
             Controls.Add(btnSalir);
             Controls.Add(btnListaVencimientos);
             Controls.Add(btnEmitirCarnet);

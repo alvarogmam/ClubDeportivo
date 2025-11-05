@@ -54,7 +54,7 @@
             lblTituloLogin.BackColor = Color.Gold;
             lblTituloLogin.Dock = DockStyle.Top;
             lblTituloLogin.Font = new Font("Segoe MDL2 Assets", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTituloLogin.ForeColor = SystemColors.WindowFrame;
+            lblTituloLogin.ForeColor = SystemColors.WindowText;
             lblTituloLogin.Location = new Point(0, 0);
             lblTituloLogin.Name = "lblTituloLogin";
             lblTituloLogin.Size = new Size(800, 70);

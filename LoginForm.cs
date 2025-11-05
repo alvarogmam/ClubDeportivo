@@ -87,9 +87,10 @@ namespace ClubDeportivo
             if (ud.ValidarUsuario(usuario, clave, out nombre, out rol))
             {
                 FrmMenuPrincipal menu = new FrmMenuPrincipal(nombre, rol);
-                this.Hide();
-                menu.ShowDialog();
-                this.Show();
+                this.Hide(); //Ocultar login si el usuario fue validado
+                menu.ShowDialog(); //Muestra el menu principal
+                this.Show(); // Volver al login al cerrar el menu.
+                LimpiarCampos(); //Limpia los textbox al volver
             }
             else
             {
@@ -99,14 +100,21 @@ namespace ClubDeportivo
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            // Cierra el menú principal y vuelve al login
+            // Sale del sistema
             DialogResult result = MessageBox.Show("¿Desea salir del sistema?", "Salir",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
-                this.Close();
+                Application.Exit();
             }
+        }
+
+        //metodo para limpiar los campos del login
+        private void LimpiarCampos()
+        {
+            txtUsuario.Clear();
+            txtPass.Clear();
         }
     }
 

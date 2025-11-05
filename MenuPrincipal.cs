@@ -22,28 +22,38 @@ namespace ClubDeportivo
             this.nombreUsuario = nombreUsuario;
             this.rolUsuario = rolUsuario;
         }
-
+        //Evento del boton registrar socio, abre la ventana de registro
         private void btnRegistrarSocio_Click(object sender, EventArgs e)
         {
-
+            FrmRegistrarSocio frm = new FrmRegistrarSocio();
+            frm.ShowDialog();
         }
 
         private void lblMenuPrincipal_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         private void FrmMenuPrincipal_Load(object sender, EventArgs e)
         {
             lblUsuario.Text = "Usuario: " + nombreUsuario;
             lblRol.Text = "Rol: " + rolUsuario;
+
+            // Mostrar un mensaje de bienvenida
+            MessageBox.Show($"¡Bienvenido, {nombreUsuario}!",
+                            "Ingreso exitoso",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
         }
 
+        //evento para salir al login
         private void btnSalir_Click(object sender, EventArgs e)
         {
             DialogResult r = MessageBox.Show("¿Desea salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (r == DialogResult.Yes)
-                Application.Exit();
+                this.Close();
         }
+        
+
     }
 }
