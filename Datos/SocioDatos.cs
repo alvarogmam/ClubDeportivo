@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace ClubDeportivo.Datos
 {
@@ -56,5 +57,51 @@ namespace ClubDeportivo.Datos
             }
 
         }
+
+        public DataTable ListarSocios()
+        {
+            DataTable tabla = new DataTable();
+
+            try
+            {
+                using (MySqlConnection cn = Conexion.getInstancia().CrearConexion())
+                {
+                    cn.Open();
+                    using (MySqlCommand cmd = new MySqlCommand("sp_listar_socios", cn))
+                    {
+                        //Indica que se trata de un procedimiento almacenado
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
+                        {
+                            da.Fill(tabla);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex) 
+            {
+                throw new Exception ("Error al obtener la lista de socios: " + ex.Message);
+            }
+            return tabla;
+        }
+
+        // Busca socios en la base de datos
+        public DataTable BuscarSocios(string filtro)
+        {
+            using (MySqlConnection cn = Conexion.getInstancia().CrearConexion())
+            {
+                MySqlCommand cmd = new MySqlCommand("sp_buscar_socios", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@p_filtro", filtro);
+                cn.Open();
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+        }
+
     }
 }

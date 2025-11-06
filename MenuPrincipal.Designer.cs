@@ -38,6 +38,7 @@
             btnEmitirCarnet = new Button();
             btnListaVencimientos = new Button();
             btnSalir = new Button();
+            btnListarSocios = new Button();
             SuspendLayout();
             // 
             // lblMenuPrincipal
@@ -162,12 +163,26 @@
             btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
             // 
+            // btnListarSocios
+            // 
+            btnListarSocios.BackColor = Color.Khaki;
+            btnListarSocios.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnListarSocios.ForeColor = SystemColors.WindowText;
+            btnListarSocios.Location = new Point(109, 550);
+            btnListarSocios.Name = "btnListarSocios";
+            btnListarSocios.Size = new Size(265, 90);
+            btnListarSocios.TabIndex = 10;
+            btnListarSocios.Text = "Lista de socios";
+            btnListarSocios.UseVisualStyleBackColor = false;
+            btnListarSocios.Click += btnListarSocios_Click;
+            // 
             // FrmMenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightYellow;
-            ClientSize = new Size(778, 594);
+            ClientSize = new Size(778, 675);
+            Controls.Add(btnListarSocios);
             Controls.Add(btnSalir);
             Controls.Add(btnListaVencimientos);
             Controls.Add(btnEmitirCarnet);
@@ -198,5 +213,6 @@
         private Button btnEmitirCarnet;
         private Button btnListaVencimientos;
         private Button btnSalir;
+        private Button btnListarSocios;
     }
 }

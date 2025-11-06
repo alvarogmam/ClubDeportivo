@@ -31,7 +31,7 @@ namespace ClubDeportivo
 
         private void lblMenuPrincipal_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void FrmMenuPrincipal_Load(object sender, EventArgs e)
@@ -53,7 +53,13 @@ namespace ClubDeportivo
             if (r == DialogResult.Yes)
                 this.Close();
         }
-        
 
+        // Evento que lista los socios en una tabla
+
+        private void btnListarSocios_Click(object sender, EventArgs e)
+        {
+            FrmListadoSocios frm = new FrmListadoSocios();
+            frm.ShowDialog();
+        }
     }
 }
