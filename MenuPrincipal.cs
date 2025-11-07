@@ -61,5 +61,13 @@ namespace ClubDeportivo
             FrmListadoSocios frm = new FrmListadoSocios();
             frm.ShowDialog();
         }
+
+        //Abre menu registrar un no socio
+        private void btnRegistrarNoSocio_Click(object sender, EventArgs e)
+        {
+            FrmRegistrarNoSocio frm = new FrmRegistrarNoSocio();
+            frm.ShowDialog();
+        }
+
     }
 }

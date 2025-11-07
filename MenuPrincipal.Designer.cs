@@ -101,6 +101,7 @@
             btnRegistrarNoSocio.TabIndex = 4;
             btnRegistrarNoSocio.Text = "Registrar No Socio";
             btnRegistrarNoSocio.UseVisualStyleBackColor = false;
+            btnRegistrarNoSocio.Click += btnRegistrarNoSocio_Click;
             // 
             // btnCobrarCuota
             // 
