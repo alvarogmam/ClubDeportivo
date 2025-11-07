@@ -49,10 +49,9 @@
             // 
             // txtBuscar
             // 
-           
-            txtBuscar.Location = new Point(220, 79);
+            txtBuscar.Location = new Point(226, 79);
             txtBuscar.Name = "txtBuscar";
-            txtBuscar.Size = new Size(570, 31);
+            txtBuscar.Size = new Size(289, 31);
             txtBuscar.TabIndex = 1;
             txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
@@ -101,7 +100,7 @@
             lblBuscar.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblBuscar.Location = new Point(143, 79);
             lblBuscar.Name = "lblBuscar";
-            lblBuscar.Size = new Size(71, 28);
+            lblBuscar.Size = new Size(77, 28);
             lblBuscar.TabIndex = 5;
             lblBuscar.Text = "Buscar:";
             // 
