@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Data;
+using ClubDeportivo.Modelos;
 
 namespace ClubDeportivo.Datos
 {
@@ -100,6 +101,45 @@ namespace ClubDeportivo.Datos
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 return dt;
+            }
+        }
+
+        // Busca socios por DNI
+        public static Socio BuscarPorDni(string dni)
+        {
+            MySqlConnection cn = null;
+            try
+            {
+                cn = Conexion.getInstancia().CrearConexion();
+                cn.Open();
+
+                string sql = @"SELECT s.idSocio, p.idPersona, p.nombre, p.apellido, p.dni
+                           FROM Persona p
+                           INNER JOIN Socio s ON s.idSocio = p.idPersona
+                           WHERE p.dni = @dni";
+
+                MySqlCommand cmd = new MySqlCommand(sql, cn);
+                cmd.Parameters.AddWithValue("@dni", dni);
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    return new Socio()
+                    {
+                        IdSocio = Convert.ToInt32(dr["idSocio"]),
+                        IdPersona = Convert.ToInt32(dr["idPersona"]),
+                        Nombre = dr["nombre"].ToString(),
+                        Apellido = dr["apellido"].ToString(),
+                        Dni = dr["dni"].ToString()
+                    };
+                }
+
+                return null;
+            }
+            finally
+            {
+                if (cn != null && cn.State == ConnectionState.Open) cn.Close();
             }
         }
 
