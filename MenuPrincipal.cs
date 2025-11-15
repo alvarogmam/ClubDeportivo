@@ -69,5 +69,12 @@ namespace ClubDeportivo
             frm.ShowDialog();
         }
 
+        //Abre munu de cobro de cuota
+        private void btnCobrarCuota_Click(object sender, EventArgs e)
+        {
+            FrmCobrarCuota frm = new FrmCobrarCuota();
+            frm.ShowDialog();   // Se abre el formulario como ventana modal
+        }
+
     }
 }

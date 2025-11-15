@@ -42,10 +42,10 @@
             // picLogo
             // 
             picLogo.Image = (Image)resources.GetObject("picLogo.Image");
-            picLogo.Location = new Point(50, 150);
+            picLogo.Location = new Point(0, 86);
             picLogo.Name = "picLogo";
-            picLogo.Size = new Size(180, 180);
-            picLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            picLogo.Size = new Size(329, 352);
+            picLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             picLogo.TabIndex = 0;
             picLogo.TabStop = false;
             // 
@@ -66,7 +66,7 @@
             // 
             lblUsuario.AutoSize = true;
             lblUsuario.Font = new Font("Segoe MDL2 Assets", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblUsuario.Location = new Point(307, 150);
+            lblUsuario.Location = new Point(358, 150);
             lblUsuario.Name = "lblUsuario";
             lblUsuario.Size = new Size(92, 28);
             lblUsuario.TabIndex = 2;
@@ -77,7 +77,7 @@
             // 
             lblPass.AutoSize = true;
             lblPass.Font = new Font("Segoe MDL2 Assets", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPass.Location = new Point(307, 239);
+            lblPass.Location = new Point(358, 239);
             lblPass.Name = "lblPass";
             lblPass.Size = new Size(129, 28);
             lblPass.TabIndex = 3;
@@ -87,7 +87,7 @@
             // 
             txtUsuario.Font = new Font("Segoe MDL2 Assets", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtUsuario.ForeColor = Color.DimGray;
-            txtUsuario.Location = new Point(443, 147);
+            txtUsuario.Location = new Point(494, 147);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(253, 31);
             txtUsuario.TabIndex = 4;
@@ -99,7 +99,7 @@
             // 
             txtPass.Font = new Font("Segoe MDL2 Assets", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtPass.ForeColor = Color.DimGray;
-            txtPass.Location = new Point(443, 236);
+            txtPass.Location = new Point(494, 236);
             txtPass.Name = "txtPass";
             txtPass.Size = new Size(253, 31);
             txtPass.TabIndex = 5;
@@ -111,7 +111,7 @@
             // 
             btnIngresar.BackColor = Color.Gold;
             btnIngresar.Font = new Font("Segoe MDL2 Assets", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnIngresar.Location = new Point(307, 341);
+            btnIngresar.Location = new Point(358, 341);
             btnIngresar.Name = "btnIngresar";
             btnIngresar.Size = new Size(389, 49);
             btnIngresar.TabIndex = 6;

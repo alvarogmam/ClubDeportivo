@@ -114,6 +114,7 @@
             btnCobrarCuota.TabIndex = 5;
             btnCobrarCuota.Text = "Cobrar Cuota";
             btnCobrarCuota.UseVisualStyleBackColor = false;
+            btnCobrarCuota.Click += btnCobrarCuota_Click;
             // 
             // btnCobrarActividad
             // 
